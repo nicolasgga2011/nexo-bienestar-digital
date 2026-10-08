@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#151b2b" />
+  <meta name="description" content="Nexo: una brújula digital para convertir tu tiempo en línea en ideas, cuidado y conexión." />
+  <title>Nexo — Tu tecnología, con intención</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="Nexo, ir al inicio">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>nexo<span class="brand-dot">.</span></span>
+      </a>
+
+      <div class="profile-card">
+        <div class="avatar" aria-hidden="true">A</div>
+        <div>
+          <p class="profile-greeting">Hola, Alex</p>
+          <p class="profile-level"><span class="tiny-orb"></span> Explorador digital</p>
+        </div>
+        <button class="icon-button" id="profileButton" aria-label="Abrir perfil" title="Tu perfil">•••</button>
+      </div>
+
+      <nav class="side-nav">
+        <p class="nav-label">Tu espacio</p>
+        <button class="nav-item active" data-view="inicio"><span class="nav-icon">⌂</span><span>Inicio</span><span class="nav-count">1</span></button>
+        <button class="nav-item" data-view="ideas"><span class="nav-icon">✦</span><span>Ideas para ti</span></button>
+        <button class="nav-item" data-view="progreso"><span class="nav-icon">◒</span><span>Mi progreso</span></button>
+        <p class="nav-label nav-label-spaced">Tu brújula</p>
+        <button class="nav-item" data-view="intencion"><span class="nav-icon">◎</span><span>Mi intención</span></button>
+        <button class="nav-item" data-view="guardados"><span class="nav-icon">▱</span><span>Guardados</span></button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="quote-card">
+          <span class="quote-mark">“</span>
+          <p>La atención es tu superpoder. Entrénala a tu manera.</p>
+          <span class="quote-author">— Nexo</span>
+        </div>
+        <button class="help-link" id="helpButton"><span>?</span> ¿Cómo funciona?</button>
+      </div>
+    </aside>
+
+    <main class="main-content" id="inicio">
+      <header class="topbar">
+        <div class="mobile-brand brand"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>nexo<span class="brand-dot">.</span></span></div>
+        <div class="breadcrumb"><span class="muted">Mi espacio</span><span class="slash">/</span><strong id="breadcrumbCurrent">Inicio</strong></div>
+        <div class="topbar-actions">
+          <div class="date-chip"><span class="calendar-icon">▣</span><span id="currentDate">Martes, 08 de octubre</span></div>
+          <button class="notification-button" id="notificationButton" aria-label="Notificaciones" title="Notificaciones"><span class="notification-dot"></span>♢</button>
+        </div>
+      </header>
+
+      <div class="page-content">
+        <section class="view-panel active" id="view-inicio" data-view-panel="inicio">
+          <div class="welcome-row">
+            <div>
+              <p class="eyebrow"><span class="eyebrow-line"></span> SEMANA 01 · CONEXIÓN CONSCIENTE</p>
+              <h1>Usa la tecnología.<br /><em>Que no te use a ti.</em></h1>
+              <p class="welcome-copy">Un espacio para descubrir cómo la tecnología puede ayudarte a aprender, crear y sentirte mejor. Sin reglas imposibles. A tu ritmo.</p>
+              <button class="primary-button large" id="startChallengeButton"><span class="play-icon">▶</span> Empezar el reto de hoy <span class="button-arrow">↗</span></button>
+            </div>
+            <div class="hero-visual" aria-hidden="true">
+              <div class="hero-glow"></div>
+              <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+              <div class="phone-illustration">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                  <span class="screen-time">09:41</span>
+                  <span class="screen-spark">✦</span>
+                  <div class="screen-face">◡</div>
+                  <div class="screen-bar"><span></span></div>
+                  <div class="screen-bar short"><span></span></div>
+                </div>
+              </div>
+              <div class="float-sticker sticker-sun">✦</div>
+              <div class="float-sticker sticker-heart">♡</div>
+              <div class="float-sticker sticker-plant">⌁</div>
+            </div>
+          </div>
+
+          <div class="stats-grid" role="group" aria-label="Resumen de tu actividad">
+            <article class="stat-card stat-card-dark">
+              <div class="stat-icon flame">♨</div>
+              <div><p class="stat-label">Racha actual</p><p class="stat-value"><span id="streakValue">4</span> <small>días</small></p></div>
+              <span class="stat-trend">+1 ↗</span>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon mint">◷</div>
+              <div><p class="stat-label">Tiempo con intención</p><p class="stat-value"><span id="intentMinutes">42</span> <small>min</small></p></div>
+              <span class="stat-trend positive">esta semana</span>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon yellow">✹</div>
+              <div><p class="stat-label">Puntos de curiosidad</p><p class="stat-value"><span id="pointsValue">280</span></p></div>
+              <span class="stat-trend positive">nivel 2</span>
+            </article>
+            <article class="stat-card stat-card-progress">
+              <div class="progress-stat-copy"><p class="stat-label">Reto semanal</p><p class="stat-value"><span id="weeklyValue">2</span><small>/ 5</small></p></div>
+              <div class="circular-progress" id="weeklyCircle" role="img" aria-label="2 de 5 retos completados"><span>40%</span></div>
+            </article>
+          </div>
+
+          <div class="section-heading">
+            <div><p class="section-kicker">TU RUTA DE HOY</p><h2>Pequeños gestos, <span>gran cambio.</span></h2></div>
+            <button class="text-button" id="seeAllIdeasButton">Ver todas las ideas <span>→</span></button>
+          </div>
+
+          <div class="dashboard-grid">
+            <div class="challenge-column">
+              <article class="challenge-card featured-card" data-challenge="pause">
+                <div class="challenge-topline"><span class="number-badge">01</span><span class="tag tag-purple">PAUSA</span><button class="save-button" aria-label="Guardar reto" data-save="pause">♡</button></div>
+                <h3>Haz espacio para<br /><span>lo que importa.</span></h3>
+                <p>Antes de abrir otra app, pregúntate: <strong>¿qué necesito de verdad ahora?</strong></p>
+                <div class="challenge-footer"><span class="time-label">◷ 5 min</span><button class="small-button light" data-open-challenge="pause">Explorar reto <span>↗</span></button></div>
+              </article>
+              <article class="challenge-card compact-card" data-challenge="create">
+                <div class="challenge-topline"><span class="number-badge number-mint">02</span><span class="tag tag-mint">CREA</span><button class="save-button" aria-label="Guardar reto" data-save="create">♡</button></div>
+                <div class="compact-content"><div><h3>Convierte tu scroll<br />en <span>una idea.</span></h3><p>Encuentra algo que te inspire y transfórmalo en algo tuyo.</p></div><div class="card-art art-pencil" aria-hidden="true">✎</div></div>
+                <div class="challenge-footer"><span class="time-label">◷ 10 min</span><button class="small-button outline" data-open-challenge="create">Ver cómo <span>↗</span></button></div>
+              </article>
+            </div>
+
+            <aside class="energy-card">
+              <div class="energy-header"><div><p class="section-kicker">CHECK-IN RÁPIDO</p><h3>¿Cómo está tu<br /><span>energía hoy?</span></h3></div><span class="energy-spark">✦</span></div>
+              <p class="energy-copy">No hay respuestas correctas. Solo un momento para escucharte.</p>
+              <div class="energy-options" role="group" aria-label="Selecciona tu energía">
+                <button class="energy-option" data-energy="enfocado"><span class="energy-emoji">◒</span><span>Enfocado</span></button>
+                <button class="energy-option" data-energy="curioso"><span class="energy-emoji">✦</span><span>Curioso</span></button>
+                <button class="energy-option" data-energy="saturado"><span class="energy-emoji">≈</span><span>Saturado</span></button>
+                <button class="energy-option" data-energy="tranquilo"><span class="energy-emoji">☼</span><span>Tranquilo</span></button>
+              </div>
+              <div class="energy-response" id="energyResponse" aria-live="polite"><span class="response-dot"></span><span>Elige una opción y te daremos una idea para este momento.</span></div>
+            </aside>
+          </div>
+
+          <section class="weekly-banner">
+            <div class="banner-icon">✺</div><div><p class="section-kicker">DESBLOQUEO DE LA SEMANA</p><h3>Tu próxima insignia: <span>Arquitecto de ideas</span></h3><p>Completa 3 retos de creación para desbloquear una nueva misión.</p></div><div class="banner-progress"><span><strong id="creationProgress">1</strong>/3</span><div class="mini-progress"><span id="creationProgressBar"></span></div></div>
+          </section>
+        </section>
+
+        <section class="view-panel" id="view-ideas" data-view-panel="ideas">
+          <div class="subpage-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> EXPLORA A TU RITMO</p><h1>Ideas para <em>encender</em><br />tu curiosidad.</h1><p class="welcome-copy">Elige una dirección. Cada actividad está pensada para que uses la tecnología como herramienta, no como ruido.</p></div><div class="ideas-orb" aria-hidden="true">✦</div></div>
+          <div class="filter-row" role="tablist" aria-label="Filtrar ideas"><button class="filter-button active" data-filter="todos">Todas</button><button class="filter-button" data-filter="pausa">Pausa</button><button class="filter-button" data-filter="crea">Crea</button><button class="filter-button" data-filter="conecta">Conecta</button><button class="filter-button" data-filter="piensa">Piensa</button></div>
+          <div class="ideas-grid" id="ideasGrid">
+            <article class="idea-card idea-yellow" data-category="pausa"><div class="idea-card-top"><span class="idea-symbol">◌</span><button class="save-button" aria-label="Guardar idea" data-save="breath">♡</button></div><span class="tag tag-dark">PAUSA</span><h3>Respira<br /><em>en cuatro.</em></h3><p>Usa un temporizador para hacer 4 ciclos de respiración antes de responder un mensaje difícil.</p><div class="idea-meta"><span>3 min</span><button class="round-arrow" data-open-challenge="breath">↗</button></div></article>
+            <article class="idea-card idea-blue" data-category="crea"><div class="idea-card-top"><span class="idea-symbol">✎</span><button class="save-button" aria-label="Guardar idea" data-save="microstory">♡</button></div><span class="tag tag-dark">CREA</span><h3>Una foto,<br /><em>tres historias.</em></h3><p>Elige una imagen de tu galería e inventa tres contextos diferentes para ella.</p><div class="idea-meta"><span>10 min</span><button class="round-arrow" data-open-challenge="microstory">↗</button></div></article>
+            <article class="idea-card idea-coral" data-category="piensa"><div class="idea-card-top"><span class="idea-symbol">◈</span><button class="save-button" aria-label="Guardar idea" data-save="source">♡</button></div><span class="tag tag-dark">PIENSA</span><h3>Detective<br /><em>de fuentes.</em></h3><p>Aprende a detectar una señal que te ayuda a saber si una noticia merece tu confianza.</p><div class="idea-meta"><span>7 min</span><button class="round-arrow" data-open-challenge="source">↗</button></div></article>
+            <article class="idea-card idea-lilac" data-category="conecta"><div class="idea-card-top"><span class="idea-symbol">♡</span><button class="save-button" aria-label="Guardar idea" data-save="connect">♡</button></div><span class="tag tag-dark">CONECTA</span><h3>Mensaje que<br /><em>sí suma.</em></h3><p>Escribe a alguien una nota específica sobre algo que admiras de esa persona.</p><div class="idea-meta"><span>5 min</span><button class="round-arrow" data-open-challenge="connect">↗</button></div></article>
+          </div>
+        </section>
+
+        <section class="view-panel" id="view-progreso" data-view-panel="progreso">
+          <div class="subpage-heading progress-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> LO QUE YA ESTÁS CONSTRUYENDO</p><h1>Tu progreso, <em>a tu medida.</em></h1><p class="welcome-copy">No se trata de hacerlo perfecto. Se trata de notar qué cambia cuando eliges con intención.</p></div><div class="big-progress-ring"><span id="bigProgressPercent">40%</span><small>de tu meta</small></div></div>
+          <div class="progress-layout"><section class="chart-card"><div class="card-heading"><div><p class="section-kicker">MINUTOS CON INTENCIÓN</p><h2>Esta semana</h2></div><span class="chart-total"><strong id="chartTotal">42</strong> min</span></div><div class="chart-area" aria-label="Gráfica de minutos con intención durante la semana"><div class="chart-y-labels"><span>30</span><span>20</span><span>10</span><span>0</span></div><div class="bars" id="weeklyBars"><div class="bar-wrap"><div class="bar" style="height:44%"><span>12</span></div><small>Lun</small></div><div class="bar-wrap"><div class="bar" style="height:68%"><span>18</span></div><small>Mar</small></div><div class="bar-wrap"><div class="bar active" style="height:40%"><span>10</span></div><small>Mié</small></div><div class="bar-wrap"><div class="bar" style="height:28%"><span>7</span></div><small>Jue</small></div><div class="bar-wrap"><div class="bar" style="height:20%"><span>5</span></div><small>Vie</small></div><div class="bar-wrap"><div class="bar empty" style="height:5%"><span>0</span></div><small>Sáb</small></div><div class="bar-wrap"><div class="bar empty" style="height:5%"><span>0</span></div><small>Dom</small></div></div></div><div class="chart-legend"><span><i class="legend-dot"></i> Tiempo elegido por ti</span><span>Meta semanal: 60 min</span></div></section><section class="streak-card"><div class="streak-top"><span class="streak-icon">♨</span><span class="tag tag-yellow">EN MARCHA</span></div><p class="streak-number"><span id="progressStreak">4</span> días</p><h3>Tu racha de atención</h3><p>Cada día que vuelves a tu intención, tu cerebro aprende que tú llevas el volante.</p><div class="week-dots"><span class="done">L</span><span class="done">M</span><span class="done">X</span><span class="today">J</span><span>V</span><span>S</span><span>D</span></div></section></div>
+          <div class="achievements-section"><div class="section-heading"><div><p class="section-kicker">TUS INSIGNIAS</p><h2>Se nota cuando <span>te eliges.</span></h2></div></div><div class="achievement-row"><article class="achievement unlocked"><span>✹</span><div><h3>Primer paso</h3><p>Completaste tu primer reto</p></div><b>✓</b></article><article class="achievement unlocked"><span>◒</span><div><h3>Ritmo propio</h3><p>4 días de racha</p></div><b>✓</b></article><article class="achievement locked"><span>✎</span><div><h3>Arquitecto de ideas</h3><p>Completa 3 retos de crea</p></div><b>2/3</b></article></div></div>
+        </section>
+
+        <section class="view-panel" id="view-intencion" data-view-panel="intencion">
+          <div class="subpage-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> TU BRÚJULA PERSONAL</p><h1>Elige cómo quieres<br /><em>estar conectado.</em></h1><p class="welcome-copy">Tu intención es una frase breve que te ayuda a volver a ti cuando todo alrededor hace ruido.</p></div><div class="intention-mark" aria-hidden="true">◎</div></div>
+          <div class="intention-layout"><section class="intention-card"><p class="section-kicker">MI INTENCIÓN DE ESTA SEMANA</p><div class="intention-quote" id="intentionQuote">“Quiero que mi tiempo en línea me deje con más ideas de las que tenía al entrar.”</div><div class="intention-author">— Alex, tú de hoy</div><button class="secondary-button" id="editIntentionButton">Editar mi intención <span>↗</span></button></section><section class="prompts-card"><div class="card-heading"><div><p class="section-kicker">PREGUNTAS QUE AYUDAN</p><h2>Cuando necesites<br /><span>volver a tu centro.</span></h2></div><span class="prompt-icon">?</span></div><ul class="prompt-list"><li><span>01</span><p>¿Esto me acerca a la persona que quiero ser?</p><button class="copy-prompt" data-prompt="¿Esto me acerca a la persona que quiero ser?">＋</button></li><li><span>02</span><p>¿Estoy eligiendo esto o solo siguiendo el impulso?</p><button class="copy-prompt" data-prompt="¿Estoy eligiendo esto o solo siguiendo el impulso?">＋</button></li><li><span>03</span><p>¿Qué podría crear con los próximos 10 minutos?</p><button class="copy-prompt" data-prompt="¿Qué podría crear con los próximos 10 minutos?">＋</button></li></ul></section></div>
+          <div class="intention-note"><span>✦</span><p><strong>Tu intención no es una regla.</strong> Es una invitación. Puedes cambiarla cuando cambies tú.</p></div>
+        </section>
+
+        <section class="view-panel" id="view-guardados" data-view-panel="guardados">
+          <div class="subpage-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> TU COLECCIÓN PERSONAL</p><h1>Ideas que quieres<br /><em>volver a visitar.</em></h1><p class="welcome-copy">Guarda los retos que te hablen y crea tu propia biblioteca de momentos con intención.</p></div><div class="saved-mark" aria-hidden="true">♡</div></div>
+          <div class="saved-empty" id="savedEmpty"><div class="empty-illustration">♡</div><h2>Aún no has guardado ideas</h2><p>Cuando encuentres una que te inspire, toca el corazón para verla aquí.</p><button class="primary-button" data-go-view="ideas">Explorar ideas <span>↗</span></button></div>
+          <div class="saved-grid" id="savedGrid"></div>
+        </section>
+      </div>
+
+      <footer class="footer"><span>nexo.</span><span>Un lugar para crecer en línea y fuera de ella.</span><span>hecho con intención <span class="footer-heart">♡</span></span></footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"><span class="toast-icon">✦</span><span id="toastMessage">Guardado</span></div>
+
+  <div class="modal-backdrop" id="challengeModal" aria-hidden="true" inert>
+    <section class="modal challenge-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" data-close-modal aria-label="Cerrar">×</button>
+      <div class="modal-ornament" id="modalOrnament">✦</div>
+      <p class="section-kicker" id="modalKicker">RETO DE HOY · 5 MIN</p>
+      <h2 id="modalTitle">Haz espacio para lo que importa.</h2>
+      <p id="modalDescription">Antes de abrir otra app, pregúntate qué necesitas de verdad ahora. Después, elige una sola cosa y hazla durante cinco minutos, sin multitarea.</p>
+      <div class="modal-steps" id="modalSteps"><div class="modal-step"><span>1</span><p>Deja el teléfono boca abajo o activa “No molestar”.</p></div><div class="modal-step"><span>2</span><p>Elige una acción pequeña que te acerque a lo que necesitas.</p></div><div class="modal-step"><span>3</span><p>Al terminar, nota cómo cambió tu energía.</p></div></div>
+      <div class="modal-checkin" id="modalCheckin"><p>¿Listo para intentarlo?</p><div class="checkin-buttons"><button class="secondary-button" data-close-modal>Ahora no</button><button class="primary-button" id="completeChallengeButton">Lo hice <span>✓</span></button></div></div>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" id="intentionModal" aria-hidden="true" inert>
+    <section class="modal intention-modal" role="dialog" aria-modal="true" aria-labelledby="intentionModalTitle">
+      <button class="modal-close" data-close-modal aria-label="Cerrar">×</button>
+      <p class="section-kicker">UNA FRASE PARA VOLVER</p><h2 id="intentionModalTitle">Escribe tu intención.</h2><p>Que sea amable, realista y tuya. No tienes que compartirla con nadie.</p>
+      <label class="sr-only" for="intentionInput">Tu intención</label><textarea id="intentionInput" maxlength="140" placeholder="Quiero que mi tiempo en línea..."></textarea><div class="character-count"><span id="characterCount">0</span>/140</div>
+      <button class="primary-button" id="saveIntentionButton">Guardar intención <span>✓</span></button>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" id="profileModal" aria-hidden="true" inert><section class="modal mini-modal" role="dialog" aria-modal="true" aria-labelledby="profileModalTitle"><button class="modal-close" data-close-modal aria-label="Cerrar">×</button><div class="avatar large-avatar">A</div><p class="section-kicker">TU PERFIL</p><h2 id="profileModalTitle">Alex, explorador digital</h2><p>Llevas <strong id="profileStreakCopy">4 días</strong> eligiendo tu atención. Sigue construyendo a tu manera.</p><button class="secondary-button" data-close-modal>Seguir explorando <span>↗</span></button></section></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
